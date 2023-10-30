@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, Dimensions, Pressable, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const exp1 = ({navigation}) => {
   return (
@@ -9,6 +10,7 @@ const exp1 = ({navigation}) => {
       <TouchableOpacity onPress={ () => {navigation.navigate('exp2')}}>
         <Text>Press me</Text>
       </TouchableOpacity>
+      <FontAwesome5 name="play-circle" size={24} color="black" />
     </SafeAreaView>
   );
 }

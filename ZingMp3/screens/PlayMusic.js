@@ -120,7 +120,6 @@ const styles = StyleSheet.create({
   control: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: '5%',
     width: screenWidth*0.8,
     alignSelf: 'center',
     height: screenHeight*0.2,
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: screenWidth*0.8,
     alignSelf: 'center',
-    height: screenHeight*0.15,
+    height: screenHeight*0.12,
     alignItems: 'center',
   },
   quality: {

@@ -11,7 +11,6 @@ import {
   useWindowDimensions,
   FlatList,
 } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
 import {
   Ionicons,
   AntDesign,

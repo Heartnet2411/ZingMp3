@@ -1,4 +1,4 @@
-import exp1 from "./exp1";
-import exp2 from "./exp2";
+import Discovery from "./Discovery";
+import PlayMusic from "./PlayMusic";
 
-export {exp1, exp2};
+export {PlayMusic, Discovery};

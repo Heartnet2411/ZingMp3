@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, Dimensions, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const exp2 = () => {
+const Discovery = () => {
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
@@ -10,7 +10,7 @@ const exp2 = () => {
   );
 }
 
-export default exp2;
+export default Discovery;
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;

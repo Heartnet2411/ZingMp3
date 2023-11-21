@@ -1,4 +1,5 @@
-import exp1 from "./exp1";
-import exp2 from "./exp2";
-
-export {exp1, exp2};
+import Discovery from "./Discovery";
+import Library from "./Library";
+import Zingchart from "./Zingchart";
+import User from './User'
+export {Library,Discovery,Zingchart,User};

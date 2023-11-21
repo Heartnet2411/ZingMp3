@@ -1,0 +1,4 @@
+
+npm install @react-navigation/bottom-tabs
+
+npx expo install expo-linear-gradient

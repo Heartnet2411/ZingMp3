@@ -11,7 +11,6 @@ import {
   useWindowDimensions,
   FlatList,
 } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
 import {
   Ionicons,
   AntDesign,
@@ -20,7 +19,7 @@ import {
 import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Library = ({ navigation ,onPress}) => {
+const Library = ({ navigation }) => {
   const [albums, setAlbums] = useState([
     {
       id: "1",
@@ -116,7 +115,7 @@ const Library = ({ navigation ,onPress}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.option}>
         <ScrollView horizontal={true}>
-          <TouchableOpacity style={styles.btnOption}>
+          <TouchableOpacity style={styles.btnOption} onPress={()=>{navigation.navigate("LoveSongs")}}>
             <AntDesign
               style={styles.iconOption}
               name="heart"
@@ -126,7 +125,7 @@ const Library = ({ navigation ,onPress}) => {
             <Text style={styles.txtOption}>Bài hát yêu thích</Text>
             <Text style={styles.txtOption}>0 bài hát</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnOption}>
+          <TouchableOpacity style={styles.btnOption} onPress={()=>{navigation.navigate("Download")}}>
             <Ionicons
               style={styles.iconOption}
               name="arrow-down-circle"
@@ -136,7 +135,9 @@ const Library = ({ navigation ,onPress}) => {
             <Text style={styles.txtOption}>Tải xuống</Text>
             <Text style={styles.txtOption}>0 bài hát</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnOption}>
+          <TouchableOpacity style={styles.btnOption} onPress={()=>{
+            navigation.navigate("Singers")
+          }}>
             <MaterialCommunityIcons
               style={styles.iconOption}
               name="account-music"
@@ -144,7 +145,7 @@ const Library = ({ navigation ,onPress}) => {
               color="#FF9434"
             />
             <Text style={styles.txtOption}>Nghệ sĩ</Text>
-            <Text style={styles.txtOption}>0 bài hát</Text>
+            {/* <Text style={styles.txtOption}>0 bài hát</Text> */}
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnOption}>
             <MaterialCommunityIcons
@@ -159,7 +160,9 @@ const Library = ({ navigation ,onPress}) => {
         </ScrollView>
       </View>
       <View style={styles.recent}>
-        <TouchableOpacity style={styles.btnRecent}>
+        <TouchableOpacity style={styles.btnRecent} onPress={()=>{
+          navigation.navigate("Recent")
+        }}>
           <Text style={styles.txtRecent}>Nghe gần đây</Text>
           <AntDesign
             style={{ marginTop: 3 }}

@@ -2,3 +2,8 @@
 npm install @react-navigation/bottom-tabs
 
 npx expo install expo-linear-gradient
+nút tìm kiếm chung
+phát nhạc thuận,
+sửa chart
+list nhạc,tìm kiếm list nhạc
+npm i lodash.filter

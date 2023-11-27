@@ -5,13 +5,13 @@ import { MaterialIcons, Entypo, FontAwesome } from '@expo/vector-icons';
 
 const Discoverys = [
   {
-    id: 1,
+    id: 'a',
     name: 'Vũ trụ cò bay',
     title: 'Album nổi bật',
     image: require('../assets/banner/vu-tru-co-bay.jpg'),
   },
   {
-    id: 2,
+    id: 'b',
     name: 'Cắt đôi nỗi sầu',
     title: 'Phát hành nổi bật',
     image: require('../assets/banner/cat-doi-noi-sau.jpg'),
@@ -21,68 +21,90 @@ const Discoverys = [
 const Recently = [
   {
     id: 1,
-    name: 'Vũ trụ cò bay',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    name: 'Alone',
+    author: 'Alan Walker',
+    image: require('../assets/img/Alone.jpg'),
+    music: require('../assets/music/Alone.mp3'),
   },
   {
     id: 2,
-    name: 'Vũ trụ cò bay Vũ trụ cò bay',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    name: 'AmewoMatsu',
+    author: 'Hoaprox',
+    image: require('../assets/img/AmewoMatsu.jpg'),
+    music: require('../assets/music/AmewoMatsu.mp3'),
   },
   {
     id: 3,
-    name: 'Vũ trụ cò bay',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    name: 'Faded',
+    author: 'Alan Walker',
+    image: require('../assets/img/Faded.jpg'),
+    music: require('../assets/music/Faded.mp3'),
   },
   {
     id: 4,
-    name: 'Vũ trụ cò bay',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    name: 'Light It Up',
+    author: 'Robin Hustin x TobiMorrow',
+    image: require('../assets/img/LightItUp.jpg'),
+    music: require('../assets/music/LightItUp.mp3'),
   },
   {
     id: 5,
-    name: 'Vũ trụ cò bay',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    name: 'Muộn rồi mà sao còn',
+    author: 'Sơn Tùng M-TP',
+    image: require('../assets/img/MuonRoiMaSaoCon.jpg'),
+    music: require('../assets/music/MuonRoiMaSaoCon.mp3'),
+  },
+  {
+    id: 6,
+    name: 'Nevada',
+    author: 'Vicetone',
+    image: require('../assets/img/Nevada.jpg'),
+    music: require('../assets/music/Nevada.mp3'),
+  },
+  {
+    id: 7,
+    name: 'See you again',
+    author: 'Charlie Puth',
+    image: require('../assets/img/SeeYouAgain.jpg'),
+    music: require('../assets/music/SeeYouAgain.mp3'),
+  },
+  {
+    id: 8,
+    name: 'Sugar',
+    author: 'Maroon 5',
+    image: require('../assets/img/Sugar.jpg'),
+    music: require('../assets/music/Sugar.mp3'),
+  },
+  {
+    id: 9,
+    name: 'Symphony',
+    author: 'Clean Bandit',
+    image: require('../assets/img/Symphony.jpg'),
+    music: require('../assets/music/Symphony.mp3'),
+  },
+  {
+    id: 10,
+    name: 'Waiting For Love',
+    author: 'Avicii',
+    image: require('../assets/img/WaitingForLove.jpg'),
+    music: require('../assets/music/WaitingForLove.mp3'),
+  },
+  {
+    id: 11,
+    name: 'YoruniKakeru',
+    author: 'YOASOBI',
+    image: require('../assets/img/YoruniKakeru.jpg'),
+    music: require('../assets/music/YoruniKakeru.mp3'),
   },
 ]
 
 const Suggests = [
   {
-    id: 1,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },  
-  {
-    id: 2,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 3,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 4,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 5,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
     id: 6,
     name: 'Cắt đôi nỗi sầu',
     image: require('../assets/banner/cat-doi-noi-sau.jpg'),
     singer: 'Tăng Duy Tân'
-  },
+  },  
   {
     id: 7,
     name: 'Cắt đôi nỗi sầu',
@@ -98,11 +120,41 @@ const Suggests = [
   {
     id: 9,
     name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+    image: require('../assets/banner/vu-tru-co-bay.jpg'),
     singer: 'Tăng Duy Tân'
   },
   {
     id: 10,
+    name: 'Cắt đôi nỗi sầu',
+    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+    singer: 'Tăng Duy Tân'
+  },
+  {
+    id: 11,
+    name: 'Cắt đôi nỗi sầu',
+    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+    singer: 'Tăng Duy Tân'
+  },
+  {
+    id: 12,
+    name: 'Cắt đôi nỗi sầu',
+    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+    singer: 'Tăng Duy Tân'
+  },
+  {
+    id: 13,
+    name: 'Cắt đôi nỗi sầu',
+    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+    singer: 'Tăng Duy Tân'
+  },
+  {
+    id: 14,
+    name: 'Cắt đôi nỗi sầu',
+    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+    singer: 'Tăng Duy Tân'
+  },
+  {
+    id: 15,
     name: 'Cắt đôi nỗi sầu',
     image: require('../assets/banner/cat-doi-noi-sau.jpg'),
     singer: 'Tăng Duy Tân'
@@ -131,9 +183,9 @@ const suggest3 = mangChia[2];
 
 const Discovery = ({navigation, route}) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       
-      <ScrollView>
+      <ScrollView style={{width: 'auto', height:'auto'}}>
         {/* //Discovery */}
         <ScrollView style={styles.discovery} horizontal={true}>
           {
@@ -163,10 +215,18 @@ const Discovery = ({navigation, route}) => {
           <ScrollView style={styles.recentlyWrap} horizontal={true}>
             {
               Recently.map((item) => (
-                <View key={item.id} style={styles.recentlyItem}>
-                  <Image style={styles.recentlyImage} source={item.image} />
-                  <Text style={styles.recentlyName}>{item.name}</Text>
-                </View>
+                <TouchableOpacity onPress={() => {navigation.navigate('PlayMusic', 
+                    {
+                      name: item.name,
+                      author: item.author,
+                      image: item.image,
+                      music: item.music,
+                    })}}>   
+                  <View key={item.id} style={styles.recentlyItem}>
+                    <Image style={styles.recentlyImage} source={item.image} />
+                    <Text style={styles.recentlyName}>{item.name}</Text>
+                  </View>
+                </TouchableOpacity>
               ))
             }
           </ScrollView>
@@ -337,7 +397,7 @@ const Discovery = ({navigation, route}) => {
           </ScrollView>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 

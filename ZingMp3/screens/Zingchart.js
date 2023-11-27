@@ -12,90 +12,99 @@ import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from "@expo/vector-icons";
-import { LineChart } from "react-native-chart-kit";
 const Zingchart = () => {
   const songs = [
     {
       id: "1",
       name: "Cắt Đôi Nỗi Sầu",
-      image: require("../assets/catdoinoisau.png"),
+      image: require("../img/songs/catdoinoisau.png"),
       singer: "Tăng Duy Tân",
     },
     {
       id: "2",
       name: "Tất Cả Hoặc Không Là Gì Cả",
-      image: require("../assets/latatca.png"),
+      image: require("../img/songs/latatca.png"),
       singer: "Cao Thái Sơn",
     },
     {
       id: "3",
       name: "Ngày Mai Người Ta Lấy Chồng",
-      image: require("../assets/ngaymai.png"),
+      image: require("../img/songs/ngaymai.png"),
       singer: "Thành Đạt",
     },
     {
       id: "4",
       name: "Lệ Lưu Ly",
-      image: require("../assets/leluuly.png"),
+      image: require("../img/songs/leluuly.png"),
       singer: "Vũ Phụng Tiên,DT",
     },
     {
       id: "5",
       name: "Không Thể Say",
-      image: require("../assets/khongthesay.png"),
+      image: require("../img/songs/khongthesay.png"),
       singer: "HIEUTHUHAI",
     },
     {
       id: "6",
       name: "Sao Trời Làm Gió",
-      image: require("../assets/saotroilamgio.png"),
+      image: require("../img/songs/saotroilamgio.png"),
       singer: "Nal",
     },
     {
       id: "7",
       name: "À Lôi",
-      image: require("../assets/aloi.png"),
+      image: require("../img/songs/aloi.png"),
       singer: "Double2T , Masew",
     },
     {
       id: "8",
       name: "Không Phải Gu",
-      image: require("../assets/khongthesay.png"),
+      image: require("../img/songs/khongthesay.png"),
       singer: "HIEUTHUHAI",
     },
+    {
+      id: "9",
+      name: "Say Trong Nụ Cười",
+      image: require("../img/songs/saytrongnucuoi.png"),
+      singer: "Tăng Duy Tân",
+    },
+    {
+      id: "10",
+      name: "Như Anh Đã Thấy Em",
+      image: require("../img/songs/nhuanhdathayem.png"),
+      singer: "PhucXP,Freak D",
+    },
+    {
+      id: "11",
+      name: "Ngày Mai Em Đi Mất",
+      image: require("../img/songs/ngaymaiemdimat.png"),
+      singer: "Khải Đăng",
+    },
+    {
+      id: "12",
+      name: "Hoa Cỏ Lau",
+      image: require("../img/songs/hoacolau.png"),
+      singer: "Phong Max",
+    },
+    {
+      id: "13",
+      name: "Ai Chung Tình Được Mãi",
+      image: require("../img/songs/aichungtinhduocmai.png"),
+      singer: "Đinh Tùng Huy",
+    },
+    {
+      id: "14",
+      name: "Sau Tất Cả",
+      image: require("../img/songs/sautatca.png"),
+      singer: "Erik",
+    },
+    {
+      id: "15",
+      name: "Ngoài 30",
+      image: require("../img/songs/ngoai30.png"),
+      singer: "Thái Học",
+    },
   ];
-  const data = {
-    labels: ["10","11", "12", "13", "14", "15", "16","17","18","19","20","21"],
-    datasets: [
-      {
-        data: [20, 21, 15, 17, 25, 22,27,21,24,30,20,19],
-        strokeWidth: 2,
-
-        color: () => `rgba(245, 0, 0)`, // optional
-        // optional
-      },
-      {
-        data: [26, 20, 17, 10, 15, 23,23,20,24,22,21.20],
-        strokeWidth: 2,
-        color: () => `rgb(0, 245, 0)`, // optional
-      },
-      {
-        data: [59, 50, 27, 18, 30, 77,75,60,76,66,80,75],
-        strokeWidth: 2,
-        color: () => `rgba(0, 0, 245)`, // optional, // optional
-      },
-    ],
-  };
-  const chartConfig = {
-    backgroundGradientFrom: "#6e1b9e",
-    backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#64156c",
-     backgroundGradientToOpacity: 0.5,
-    color: () => `rgb(252, 251, 255)`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false, // optional
-  };
   return (
     <LinearGradient
       colors={["#6e1b9e", "#64156c"]}
@@ -103,19 +112,7 @@ const Zingchart = () => {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.chart}>
-          <LineChart
-            data={data}
-            width={380}
-            height={210}
-            chartConfig={chartConfig}
-            bezier
-            withHorizontalLabels={false}
-            withDots={false}
-            withShadow={false}
-            withVerticalLines={false}
-            fromZero={true}
-            
-          />
+          <Image style={styles.imgchart} source={require('../assets/chart.png')}/>
         </View>
         <FlatList
           style={styles.list}
@@ -152,13 +149,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chart: {
-    height: 220,
+    height: 260,
+    alignItems:"center"
   },
   list: {
     flex: 1,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     backgroundColor: "#301C3C",
+  },
+  imgchart:{
+    resizeMode:"contain",
+    width:400,
+    height:255
   },
   image: {
     width: 55,

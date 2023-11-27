@@ -16,6 +16,18 @@ const Discoverys = [
     title: 'Phát hành nổi bật',
     image: require('../assets/banner/cat-doi-noi-sau.jpg'),
   },
+  {
+    id: 'c',
+    name: 'Vũ trụ cò bay',
+    title: 'Album nổi bật',
+    image: require('../assets/banner/vu-tru-co-bay.jpg'),
+  },
+  {
+    id: 'd',
+    name: 'Cắt đôi nỗi sầu',
+    title: 'Phát hành nổi bật',
+    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
+  },
 ]
 
 const Recently = [
@@ -98,69 +110,6 @@ const Recently = [
   },
 ]
 
-const Suggests = [
-  {
-    id: 6,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },  
-  {
-    id: 7,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 8,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 9,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 10,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/vu-tru-co-bay.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 11,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 12,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 13,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 14,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-  {
-    id: 15,
-    name: 'Cắt đôi nỗi sầu',
-    image: require('../assets/banner/cat-doi-noi-sau.jpg'),
-    singer: 'Tăng Duy Tân'
-  },
-]
-
 function chiaMang(array) {
   let doDai = (array.length / 3);
 
@@ -176,7 +125,7 @@ function chiaMang(array) {
   return [phan1, phan2, phan3];
 }
 
-const mangChia = chiaMang(Suggests);
+const mangChia = chiaMang(Recently);
 const suggest1 = mangChia[0];
 const suggest2 = mangChia[1];
 const suggest3 = mangChia[2]; 
@@ -215,13 +164,14 @@ const Discovery = ({navigation, route}) => {
           <ScrollView style={styles.recentlyWrap} horizontal={true}>
             {
               Recently.map((item) => (
-                <TouchableOpacity onPress={() => {navigation.navigate('PlayMusic', 
+                <TouchableOpacity onPress={() => { navigation.navigate('PlayMusic', 
                     {
                       name: item.name,
                       author: item.author,
                       image: item.image,
                       music: item.music,
-                    })}}>   
+                    })
+                    }}>   
                   <View key={item.id} style={styles.recentlyItem}>
                     <Image style={styles.recentlyImage} source={item.image} />
                     <Text style={styles.recentlyName}>{item.name}</Text>
@@ -245,7 +195,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -259,7 +209,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -273,7 +223,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -338,7 +288,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -352,7 +302,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -366,7 +316,7 @@ const Discovery = ({navigation, route}) => {
                         <Image style={styles.suggestImage} source={item.image} />
                         <View style={{flexDirection: 'column', marginLeft: 10, flex: 1}}>
                           <Text style={styles.suggestName}>{item.name}</Text>
-                          <Text style={styles.suggestSinger}>{item.singer}</Text>
+                          <Text style={styles.suggestSinger}>{item.author}</Text>
                         </View>
                         <Entypo name="dots-three-vertical" size={24} color="white" style={{alignSelf: 'center'}}/>
                       </View>
@@ -418,11 +368,13 @@ const styles = StyleSheet.create({
     width: screenWidth,
     height: 250,
     marginLeft: 20,
+    
   },
   discoveryWrap: {
-    width: '60%',
+    width: screenWidth * 0.6,
     height: 250,
     position: 'relative',
+    marginRight: 60,
   },
   discoveryItem: {
     width: 'auto',

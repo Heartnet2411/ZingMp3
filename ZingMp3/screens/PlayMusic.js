@@ -3,9 +3,9 @@ import { View, Text, Dimensions, StyleSheet, Image, TouchableOpacity, Animated, 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Slider from '@react-native-community/slider';
 import { LinearGradient } from 'expo-linear-gradient';
-import { MaterialCommunityIcons, Feather, Octicons, FontAwesome ,FontAwesome5, AntDesign, Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather, Octicons, FontAwesome ,FontAwesome5, Entypo, Ionicons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
-import { useEffect, useState, useMemo, useRef } from 'react';
+import { useEffect, useState, } from 'react';
 
 
 const PlayMusic = ({navigation, route}) => {
@@ -13,39 +13,6 @@ const PlayMusic = ({navigation, route}) => {
   const author = route.params.author;
   const image = route.params.image;
   const music = route.params.music;
-
-  const [rotation, setRotation] = useState(0);
-  const rotateValue = useRef(new Animated.Value(rotation)).current;
-
-  const rotateAnimation = Animated.timing(rotateValue, {
-    toValue: 1,
-    duration: 10000,
-    easing: Easing.linear,
-    useNativeDriver: true,
-  });
-  Animated.loop(rotateAnimation).start();
-
-  useEffect(() => {
-    Animated.loop(rotateAnimation).start();
-    return () => rotateValue.setValue(rotation); // Preserve rotation value when component unmounts
-  }, [rotation, rotateAnimation, rotateValue]);
-
-  const rotateImage = useMemo(() => (
-    <Animated.Image
-          source={image}
-          style={[styles.image,{
-            transform: [
-              {
-                rotate: rotateValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [`${rotation}deg`, `${rotation + 360}deg`],
-                }),
-              },
-            ],
-          }]}
-        />
-  ), [ rotateValue, rotation]);
-
 
   const [sound, setSound] = useState();
   const [isPlaying, setIsPlaying] = useState(false);
@@ -115,7 +82,10 @@ const PlayMusic = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient   colors={['#999', '#1e1e1e']} style={styles.container}>
-        {rotateImage}
+        <Image
+          source={image}
+          style={[styles.image]}
+        />
 
         <View style={{justifyContent:'center', alignItems:'center', height: screenHeight*0.22,}}>
           <View style={styles.name}>
@@ -128,15 +98,17 @@ const PlayMusic = ({navigation, route}) => {
           </View>
 
           <View style={styles.slider}>
-            <Slider
-              style={{width: 300, height: 40}}
-              minimumValue={0}
-              maximumValue={1}
-              minimumTrackTintColor="#FFFFFF"
-              maximumTrackTintColor="#000000"
-              thumbTintColor='#FFFFFF'
-              value={positionSecond}
-            />
+            <View style={{alignSelf: 'center'}}>
+              <Slider
+                style={{width: 300, height: 40}}
+                minimumValue={0}
+                maximumValue={1}
+                minimumTrackTintColor="#FFFFFF"
+                maximumTrackTintColor="#000000"
+                thumbTintColor='#FFFFFF'
+                value={positionSecond}
+              />
+            </View>
             <View style={styles.time}>
               <Text style={styles.timeStart}>{position}</Text>
               <Text style={styles.timeEnd}>{duration}</Text>
@@ -190,7 +162,7 @@ const styles = StyleSheet.create({
     width: screenWidth*0.8,
     height: screenWidth*0.8,
     borderRadius: screenWidth*0.4,
-    marginTop: screenHeight*0.08,
+    marginTop: screenHeight*0.06,
     alignSelf: 'center',
   },
 
@@ -198,7 +170,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: screenHeight*0.05,
     width: screenWidth*0.8,
   },
   info: {

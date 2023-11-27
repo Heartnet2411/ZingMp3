@@ -3,7 +3,7 @@ import React from "react";
 
 import { Library, Zingchart, User, Discovery, PlayMusic} from "./screens";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Entypo } from "@expo/vector-icons";
 import LoveSongs from "./details/LoveSongs";
 import Search from "./screens/Search";
 import Download from "./details/Download";
@@ -175,7 +175,9 @@ const ZingchartHeader = ({ navigation }) => {
               <TouchableOpacity>
                 <Feather name="mic" size={24} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{
+                navigation.navigate("Search")
+              }}>
                 <Feather
                   style={{ marginLeft: 20 }}
                   name="search"
@@ -194,16 +196,17 @@ const ZingchartHeader = ({ navigation }) => {
           },
         }}
       />
+      <Stack.Screen name="Search" component={Search} options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 };
-const UserHeader = () => {
+const UserHeader = ({navigation}) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="UserHeader"
         component={User}
-        options={{
+        options={({navigation})=>({
           headerTitle: () => (
             <View style={{ flexDirection: "row", marginLeft: 10 }}>
               <Text
@@ -223,7 +226,9 @@ const UserHeader = () => {
               <TouchableOpacity>
                 <Feather name="mic" size={24} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{
+                navigation.navigate("Search")
+              }}>
                 <Feather
                   style={{ marginLeft: 20 }}
                   name="search"
@@ -240,11 +245,70 @@ const UserHeader = () => {
             borderColor: "#000",
             borderWidth: 0,
           },
-        }}
+        })}
       />
+      <Stack.Screen name="Search" component={Search} options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 };
-export { LibraryHeader, ZingchartHeader, UserHeader };
+
+const DiscoveryHeader=(props) =>{
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Discovery" component={Discovery} options={({navigation}) => ({
+            headerTitle: () => (
+              <View style={{flexDirection: 'row', marginLeft: 10}}>
+                <Text style={{color: 'white', fontSize: 25, marginLeft: 10, fontWeight: 'bold'}}>Khám phá</Text>
+              </View>
+            ),
+            headerRight: () => (
+              <View style={{flexDirection: 'row', marginRight: 20}}>
+                <Feather name="mic" size={24} color="white" />
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Search")
+                  }}>
+                  <Feather
+                    style={{ marginLeft: 20 }}
+                    name="search"
+                    size={24}
+                    color="white"
+                  />
+                </TouchableOpacity>
+              </View>
+            ),
+            headerStyle: {
+              backgroundColor: '#000',
+              color: '#fff',
+              boxShadow: 'none',
+              borderColor: '#000',
+              borderWidth: 0,
+            },
+          })}/>
+        <Stack.Screen name="PlayMusic" component={PlayMusic} options={({navigation}) => ({
+          headerTitle: '',
+          headerRight: () => (
+            <View style={{flexDirection: 'row', marginRight: 20}}>
+              <Feather name="more-vertical" size={28} color="white" />
+            </View>
+          ),
+          headerTransparent: true,
+          headerBackVisible: false,
+          tabarStyle: {
+            display: 'none',
+          },
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <View style={{flexDirection: 'row', marginLeft: 20}}>
+                <Entypo name="chevron-down" size={32} color="white" />
+              </View>
+            </TouchableOpacity>
+          ),
+        })}/>
+        <Stack.Screen name="Search" component={Search} options={{headerShown:false}}/>
+    </Stack.Navigator>
+  )
+}
+
+export { LibraryHeader, ZingchartHeader, UserHeader, DiscoveryHeader };
 
 const styles = StyleSheet.create({});

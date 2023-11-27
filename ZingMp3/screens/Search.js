@@ -11,193 +11,224 @@ import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
-const Search = ({ navigation }) => {
+const Search = ({ navigation, route }) => {
   const songs = [
     {
       id: "1",
       name: "Cắt Đôi Nỗi Sầu",
       image: require("../img/songs/catdoinoisau.png"),
       singer: "Tăng Duy Tân",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "2",
       name: "Tất Cả Hoặc Không Là Gì Cả",
       image: require("../img/songs/latatca.png"),
       singer: "Cao Thái Sơn",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "3",
       name: "Ngày Mai Người Ta Lấy Chồng",
       image: require("../img/songs/ngaymai.png"),
       singer: "Thành Đạt",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "4",
       name: "Lệ Lưu Ly",
       image: require("../img/songs/leluuly.png"),
       singer: "Vũ Phụng Tiên,DT",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "5",
       name: "Không Thể Say",
       image: require("../img/songs/khongthesay.png"),
       singer: "HIEUTHUHAI",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "6",
       name: "Sao Trời Làm Gió",
       image: require("../img/songs/saotroilamgio.png"),
       singer: "Nal",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "7",
       name: "À Lôi",
       image: require("../img/songs/aloi.png"),
       singer: "Double2T , Masew",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "8",
       name: "Không Phải Gu",
       image: require("../img/songs/khongthesay.png"),
       singer: "HIEUTHUHAI",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "9",
       name: "Say Trong Nụ Cười",
       image: require("../img/songs/saytrongnucuoi.png"),
       singer: "Tăng Duy Tân",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "10",
       name: "Như Anh Đã Thấy Em",
       image: require("../img/songs/nhuanhdathayem.png"),
       singer: "PhucXP,Freak D",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "11",
       name: "Ngày Mai Em Đi Mất",
       image: require("../img/songs/ngaymaiemdimat.png"),
       singer: "Khải Đăng",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "12",
       name: "Hoa Cỏ Lau",
       image: require("../img/songs/hoacolau.png"),
       singer: "Phong Max",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "13",
       name: "Ai Chung Tình Được Mãi",
       image: require("../img/songs/aichungtinhduocmai.png"),
       singer: "Đinh Tùng Huy",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "14",
       name: "Sau Tất Cả",
       image: require("../img/songs/sautatca.png"),
       singer: "Erik",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "15",
       name: "Ngoài 30",
       image: require("../img/songs/ngoai30.png"),
       singer: "Thái Học",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "16",
       name: "Một Nhà",
       image: require("../img/songs/motnha.png"),
       singer: "DA LAB",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "17",
       name: "Em Của Ngày Hôm Qua",
       image: require("../img/songs/ecuangayhomqua.png"),
       singer: "Sơn Tùng M-TP",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "18",
       name: "Bước Qua Đời Nhau",
       image: require("../img/songs/lebaobinh.png"),
       singer: "Lê Bảo Bình",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "19",
       name: "Nơi Này Có Anh",
       image: require("../img/songs/noinaycoanh.png"),
       singer: "Đình Dũng",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "20",
       name: "Rời Bỏ",
       image: require("../img/songs/roibo.png"),
       singer: "Hòa Minzy",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "21",
       name: "Mặt Trời Của Em",
       image: require("../img/songs/mattroicuaem.png"),
       singer: "Phương Ly,JustaTee",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "22",
       name: "Em Nên Dừng Lại",
       image: require("../img/songs/emnendunglai.png"),
       singer: "Khang Việt",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "23",
       name: "Rượu Mừng Hóa Người Dưng",
       image: require("../img/songs/ruoumung.png"),
       singer: "TLong",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "24",
       name: "Sao Cũng Được",
       image: require("../img/songs/saocungduoc.png"),
       singer: "Thành Đạt",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "25",
       name: "Một Bước Yêu Vạn Dặm Đau",
       image: require("../img/songs/1buocyeu.png"),
       singer: "Mr Siro",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "26",
       name: "Gạt Đi Nước Mắt",
       image: require("../img/songs/ffe87169f25c5bc08d1333bda3d3acb5_1410318537.jpg"),
       singer: "Noo Phước Thịnh",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "27",
       name: "Là Bạn Không Thể Yêu",
       image: require("../img/songs/lou.png"),
       singer: "Lou Hoàng",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "28",
       name: "Qua Cầu Rước Em",
       image: require("../img/songs/quacauruocem.png"),
       singer: "Danh Ka",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "29",
       name: "Âm Thầm Bên Em",
       image: require("../img/songs/amthambenem.png"),
       singer: "Sơn Tùng M-TP",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "30",
       name: "Yêu Là Tha Thu",
       image: require("../img/songs/yeulathathu.png"),
       singer: "Only C",
+      song: require("../assets/music/Alone.mp3"),
     },
     {
       id: "31",
       name: "Lạc Trôi",
       image: require("../img/songs/ecuangayhomqua.png"),
-      singer: "Sơn Tùng M-TP"
+      singer: "Sơn Tùng M-TP",
+      song: require("../assets/music/Alone.mp3"),
     }
   ];
   const [searchQuery, setSearchQuery] = useState("");
@@ -276,7 +307,13 @@ const Search = ({ navigation }) => {
         data={songList}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {navigation.navigate('PlayMusic',
+              {
+                name: item.name,
+                image: item.image,
+                author: item.singer,
+                music: item.song,
+              })}}>
               <View style={styles.wrapSong}>
                 <Image style={styles.imgSong} source={item.image} />
                 <View style={styles.wrapInfo}>

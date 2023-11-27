@@ -60,13 +60,85 @@ const LoveSongs = () => {
       image: require("../img/songs/khongthesay.png"),
       singer: "HIEUTHUHAI",
     },
+    {
+      id: "9",
+      name: "Say Trong Nụ Cười",
+      image: require("../img/songs/saytrongnucuoi.png"),
+      singer: "Tăng Duy Tân",
+    },
+    {
+      id: "10",
+      name: "Như Anh Đã Thấy Em",
+      image: require("../img/songs/nhuanhdathayem.png"),
+      singer: "PhucXP,Freak D",
+    },
+    {
+      id: "11",
+      name: "Ngày Mai Em Đi Mất",
+      image: require("../img/songs/ngaymaiemdimat.png"),
+      singer: "Khải Đăng",
+    },
+    {
+      id: "12",
+      name: "Hoa Cỏ Lau",
+      image: require("../img/songs/hoacolau.png"),
+      singer: "Phong Max",
+    },
+    {
+      id: "13",
+      name: "Ai Chung Tình Được Mãi",
+      image: require("../img/songs/aichungtinhduocmai.png"),
+      singer: "Đinh Tùng Huy",
+    },
+    {
+      id: "14",
+      name: "Sau Tất Cả",
+      image: require("../img/songs/sautatca.png"),
+      singer: "Erik",
+    },
+    {
+      id: "15",
+      name: "Ngoài 30",
+      image: require("../img/songs/ngoai30.png"),
+      singer: "Thái Học",
+    },
+    {
+      id: "16",
+      name: "Một Nhà",
+      image: require("../img/songs/motnha.png"),
+      singer: "DA LAB",
+    },
+    {
+      id: "17",
+      name: "Em Của Ngày Hôm Qua",
+      image: require("../img/songs/ecuangayhomqua.png"),
+      singer: "Sơn Tùng M-TP",
+    },
+    {
+      id: "18",
+      name: "Bước Qua Đời Nhau",
+      image: require("../img/songs/lebaobinh.png"),
+      singer: "Lê Bảo Bình",
+    },
+    {
+      id: "19",
+      name: "Nơi Này Có Anh",
+      image: require("../img/songs/noinaycoanh.png"),
+      singer: "Đình Dũng",
+    },
+    {
+      id: "20",
+      name: "Rời Bỏ",
+      image: require("../img/songs/roibo.png"),
+      singer: "Hòa Minzy",
+    },
   ];
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.txtHeader}>Bài hát yêu thích</Text>
         <View style={styles.content}>
-          <Text style={styles.txtContent}>8 bài hát</Text>
+          <Text style={styles.txtContent}>20 bài hát</Text>
           <Text style={styles.txtContent}>Đã lưu vào thư viện</Text>
         </View>
         <View style={styles.list}>

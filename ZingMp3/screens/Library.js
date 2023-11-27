@@ -24,22 +24,22 @@ const Library = ({ navigation }) => {
     {
       id: "1",
       name: "Top 100 Nhạc VPop Hay Nhất",
-      image: require("../assets/image17.png"),
+      image: require("../img/albums/image17.png"),
     },
     {
       id: "2",
-      name: "Top 100 Nhạc USUK Hay Nhất",
-      image: require("../assets/image18.png"),
+      name: "Top Bài Hát Hay Của Kay Trần",
+      image: require("../img/albums/image18.png"),
     },
     {
       id: "3",
       name: "Top 100 Nhạc Trẻ Hay Nhất",
-      image: require("../assets/image19.png"),
+      image: require("../img/albums/hits.png"),
     },
     {
       id: "4",
-      name: "Top 100 Nhạc Trữ Tình Hay Nhất",
-      image: require("../assets/image19.png"),
+      name: "Top Hits Quốc Dân",
+      image: require("../img/albums/image19.png"),
     },
   ]);
   const tabs = ["Playlist", "Album"];
@@ -48,62 +48,27 @@ const Library = ({ navigation }) => {
     {
       id: "1",
       name: "Nhạc VPop",
-      image: require("../assets/image17.png"),
-    },
-    {
-      id: "2",
-      name: "Nhạc USUK",
-      image: require("../assets/image18.png"),
+      image: require("../img/albums/image17.png"),
     },
     {
       id: "3",
       name: "Nhạc Trẻ",
-      image: require("../assets/image19.png"),
-    },
-    {
-      id: "4",
-      name: "Nhạc Trữ Tình",
-      image: require("../assets/image19.png"),
+      image: require("../img/albums/image19.png"),
     },
     {
       id: "5",
       name: "Nhạc VPop",
-      image: require("../assets/image17.png"),
+      image: require("../img/albums/100Vpop.png"),
     },
     {
       id: "6",
-      name: "Nhạc USUK",
-      image: require("../assets/image18.png"),
+      name: "Top Vpop Thập Niên 2010",
+      image: require("../img/albums/2010.png"),
     },
     {
       id: "7",
       name: "Nhạc Trẻ",
-      image: require("../assets/image19.png"),
-    },
-    {
-      id: "8",
-      name: "Nhạc Trữ Tình",
-      image: require("../assets/image19.png"),
-    },
-    {
-      id: "9",
-      name: "Nhạc VPop",
-      image: require("../assets/image17.png"),
-    },
-    {
-      id: "10",
-      name: "Nhạc USUK",
-      image: require("../assets/image18.png"),
-    },
-    {
-      id: "11",
-      name: "Nhạc Trẻ",
-      image: require("../assets/image19.png"),
-    },
-    {
-      id: "12",
-      name: "Nhạc Trữ Tình",
-      image: require("../assets/image19.png"),
+      image: require("../img/albums/image19.png"),
     },
   ];
   const w = Dimensions.get('screen').width;
@@ -123,7 +88,7 @@ const Library = ({ navigation }) => {
               color="#4bd1f9"
             />
             <Text style={styles.txtOption}>Bài hát yêu thích</Text>
-            <Text style={styles.txtOption}>0 bài hát</Text>
+            <Text style={styles.txtOption}>20 bài hát</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnOption} onPress={()=>{navigation.navigate("Download")}}>
             <Ionicons
@@ -133,7 +98,7 @@ const Library = ({ navigation }) => {
               color="#AF4CF7"
             />
             <Text style={styles.txtOption}>Tải xuống</Text>
-            <Text style={styles.txtOption}>0 bài hát</Text>
+            <Text style={styles.txtOption}>31 bài hát</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnOption} onPress={()=>{
             navigation.navigate("Singers")

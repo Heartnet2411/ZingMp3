@@ -19,7 +19,7 @@ const LibraryHeader = () => {
       <Stack.Screen
         name="LibraryHeader"
         component={Library}
-        options={{
+        options={({navigation})=>({
           headerTitle: () => (
             <View style={{ flexDirection: "row", marginLeft: 10 }}>
               <Text
@@ -39,7 +39,9 @@ const LibraryHeader = () => {
               <TouchableOpacity>
                 <Feather name="mic" size={24} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{
+                navigation.navigate("Search")
+              }}>
                 <Feather
                   style={{ marginLeft: 20 }}
                   name="search"
@@ -56,7 +58,7 @@ const LibraryHeader = () => {
             borderColor: "#000",
             borderWidth: 0,
           },
-        }}
+        })}
       />
       <Stack.Screen
         name="LoveSongs"
@@ -87,7 +89,7 @@ const LibraryHeader = () => {
           },
         })}
       />
-      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Search" component={Search} options={{headerShown:false}}/>
       <Stack.Screen
         name="Download"
         component={Download}

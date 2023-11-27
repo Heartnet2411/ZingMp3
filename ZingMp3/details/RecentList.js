@@ -15,22 +15,32 @@ const RecentList = () => {
     {
         id: "1",
         name: "Top 100 Nhạc VPop Hay Nhất",
-        image: require("../assets/image17.png"),
+        image: require("../img/albums/image17.png"),
       },
       {
         id: "2",
-        name: "Top 100 Nhạc USUK Hay Nhất",
-        image: require("../assets/image18.png"),
+        name: "Top 100 Nhạc Dance Việt Hay Nhất",
+        image: require("../img/albums/100dance.png"),
       },
       {
         id: "3",
         name: "Top 100 Nhạc Trẻ Hay Nhất",
-        image: require("../assets/image19.png"),
+        image: require("../img/albums/100Vpop.png"),
       },
       {
         id: "4",
-        name: "Top 100 Nhạc Trữ Tình Hay Nhất",
-        image: require("../assets/image19.png"),
+        name: "Top bài hát hay của Kay Trần",
+        image: require("../img/albums/image18.png"),
+      },
+      {
+        id: "5",
+        name: "Top Hits 2010",
+        image: require("../img/albums/2010.png"),
+      },
+      {
+        id: "6",
+        name: "Top bài hát hay của Sơn Tùng M-TP",
+        image: require("../img/albums/image19.png"),
       },
     ];
   return (
